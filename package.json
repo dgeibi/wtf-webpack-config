@@ -1,0 +1,26 @@
+{
+  "name": "wtf-webpack-config",
+  "version": "0.0.1",
+  "description": "create webpack config more elegantly",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "import-cwd": "^2.1.0"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "webpack": "2.x || 3.x"
+  },
+  "author": "dgeibi",
+  "license": "MIT",
+  "keywords": [
+    "webpack",
+    "webpack-config",
+    "webpack-chain"
+  ],
+  "scripts": {
+    "lint": "eslint index.js"
+  }
+}
