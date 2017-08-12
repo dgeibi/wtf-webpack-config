@@ -1,44 +1,47 @@
 module.exports = class Config {
   constructor(config) {
-    this.config = null;
-    this.reset(config);
+    this.config = null
+    this.reset(config)
   }
 
   reset(config) {
-    this.config = Object.assign({
-      entry: {},
-      output: {},
-      module: { rules: [] },
-      plugins: [],
-      devServer: {},
-    }, config);
-    return this;
+    this.config = Object.assign(
+      {
+        entry: {},
+        output: {},
+        module: { rules: [] },
+        plugins: [],
+        devServer: {},
+      },
+      config
+    )
+    return this
   }
 
   toConfig() {
-    return this.config;
+    return this.config
   }
 
-  use(fn, condition = true) {
-    if (condition) {
-      fn(this);
+  use(fn, condition) {
+    if (condition !== false) {
+      fn(this)
     }
-    return this;
+    return this
   }
 
-  plugin(Plugin, ...args) {
+  plugin(Plugin, args, condition) {
     if (typeof Plugin === 'function') {
-      this.config.plugins.push(new Plugin(...args));
+      if (condition !== false) this.config.plugins.push(new Plugin(...args))
     } else if (typeof Plugin === 'object') {
-      this.config.plugins.push(Plugin);
+      if (args !== false) this.config.plugins.push(Plugin)
     }
-    return this;
+    return this
   }
 
-  rule(rule) {
-    if (rule) {
-      this.config.module.rules.push(rule);
+  rule(rule, condition) {
+    if (rule && condition !== false) {
+      this.config.module.rules.push(rule)
     }
-    return this;
+    return this
   }
-};
+}

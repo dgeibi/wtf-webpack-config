@@ -1,4 +1,4 @@
-const webpack = require('import-cwd')('webpack');
+const webpack = require('import-cwd')('webpack')
 
 module.exports = options => (config) => {
   const opts = Object.assign(
@@ -6,7 +6,7 @@ module.exports = options => (config) => {
       'process.env.NODE_ENV': '"production"',
     },
     options
-  );
+  )
 
-  config.plugin(webpack.DefinePlugin, opts);
-};
+  config.plugin(webpack.DefinePlugin, [opts])
+}

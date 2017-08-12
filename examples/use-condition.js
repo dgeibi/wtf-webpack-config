@@ -1,11 +1,11 @@
-const path = require('path');
+const path = require('path')
 
-const Config = require('wtf-webpack-config');
-const babel = require('wtf-webpack-config/rules/js/babel');
-const define = require('wtf-webpack-config/plugins/define');
+const Config = require('wtf-webpack-config')
+const babel = require('wtf-webpack-config/rules/js/babel')
+const define = require('wtf-webpack-config/plugins/define')
 
-const publicPath = 'dist';
-const assetPath = 'asset';
+const publicPath = 'dist'
+const assetPath = 'asset'
 
 const config = new Config({
   entry: './src/index.js',
@@ -17,13 +17,13 @@ const config = new Config({
   devServer: {
     contentBase: path.resolve(__dirname, publicPath),
   },
-});
+})
 
-config.use(babel());
+config.use(babel())
 
 module.exports = (env = {}) => {
-  const isProduction = !!env.production;
-  config.use(define(), isProduction);
+  const isProduction = !!env.production
+  config.use(define(), isProduction)
 
-  return config.toConfig();
-};
+  return config.toConfig()
+}

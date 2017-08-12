@@ -1,9 +1,9 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
-const Config = require('wtf-webpack-config');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
+const Config = require('wtf-webpack-config')
 
-const publicPath = 'dist';
-const assetPath = 'asset';
+const publicPath = 'dist'
+const assetPath = 'asset'
 
 const config = new Config({
   entry: './src/index.js',
@@ -15,11 +15,12 @@ const config = new Config({
   devServer: {
     contentBase: path.resolve(__dirname, publicPath),
   },
-});
+})
 
-config.plugin(HtmlWebpackPlugin, {
-  template: 'templates/index.ejs',
-});
+config.plugin(HtmlWebpackPlugin, [
+  {
+    template: 'templates/index.ejs',
+  },
+])
 
-
-module.exports = config.toConfig();
+module.exports = config.toConfig()

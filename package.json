@@ -1,6 +1,6 @@
 {
   "name": "wtf-webpack-config",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "create webpack config more elegantly",
   "main": "index.js",
   "directories": {

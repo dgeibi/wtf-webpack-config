@@ -1,13 +1,16 @@
-const webpack = require('import-cwd')('webpack');
+const webpack = require('import-cwd')('webpack')
 
 module.exports = options => (config) => {
-  const opts = Object.assign({
-    compress: {
-      warnings: false,
+  const opts = Object.assign(
+    {
+      compress: {
+        warnings: false,
+      },
+      comments: false,
+      'screw-ie8': true,
     },
-    comments: false,
-    'screw-ie8': true,
-  }, options);
+    options
+  )
 
-  config.plugin(webpack.optimize.UglifyJsPlugin, opts);
-};
+  config.plugin(webpack.optimize.UglifyJsPlugin, [opts])
+}
