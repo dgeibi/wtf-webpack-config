@@ -1,7 +1,7 @@
 const BabiliPlugin = require('import-cwd')('babili-webpack-plugin')
 
 module.exports = () => (config) => {
-  const babiliOptions = {
+  const overrides = {
     compress: {
       warnings: false,
     },
@@ -9,7 +9,7 @@ module.exports = () => (config) => {
     'screw-ie8': true,
   }
 
-  const overrides = {
+  const babiliOptions = {
     removeConsole: true,
     removeDebugger: true,
   }
