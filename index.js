@@ -31,7 +31,9 @@ module.exports = class Config {
 
   plugin(Plugin, args, condition) {
     if (typeof Plugin === 'function') {
-      if (condition !== false) this.config.plugins.push(new Plugin(...args))
+      if (condition !== false) {
+        this.config.plugins.push(args ? new Plugin(...args) : new Plugin())
+      }
     } else if (typeof Plugin === 'object') {
       if (args !== false) this.config.plugins.push(Plugin)
     }
