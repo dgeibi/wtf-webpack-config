@@ -1,6 +1,6 @@
-const webpack = require('import-cwd')('webpack')
 
 module.exports = options => (config) => {
+  const webpack = require('import-cwd')('webpack')
   const opts = Object.assign(
     {
       compress: {

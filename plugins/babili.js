@@ -1,6 +1,5 @@
-const BabiliPlugin = require('import-cwd')('babili-webpack-plugin')
-
 module.exports = () => (config) => {
+  const BabiliPlugin = require('import-cwd')('babili-webpack-plugin')
   const overrides = {
     compress: {
       warnings: false,

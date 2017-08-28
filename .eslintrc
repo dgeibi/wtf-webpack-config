@@ -1,0 +1,6 @@
+{
+  "extends": "dgeibi",
+  "rules": {
+    "global-require": "off"
+  }
+}
